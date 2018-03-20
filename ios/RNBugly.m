@@ -14,7 +14,7 @@ RCT_EXPORT_MODULE()
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [Bugly startWithAppId:nil]
+        [Bugly startWithAppId:nil];
     });
 }
 
