@@ -13,10 +13,8 @@ Pod::Spec.new do |s|
   #s.requires_arc = true
   s.preserve_paths  = "**/*.js"
 
-  spec.framework    = 'SystemConfiguration'
-  spec.framework    = 'Security'
-  spec.framework    = 'libz.dylib'
-  spec.framework    = 'libc++.dylib'
+  s.ios.frameworks    = "SystemConfiguration", "Security"
+  s.ios.library = 'z', 'c++'
 
   s.dependency "Bugly"
 
