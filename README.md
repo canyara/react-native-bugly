@@ -9,6 +9,26 @@
 
 `$ react-native link react-native-bugly`
 
+### 配置
+
+#### iOS
+使用Bugly的Info.plist配置初始化信息
+Bugly支持读取Info.plist文件读取SDK初始化参数，可配置的参数如下：
+
+- Appid
+    - Key: BuglyAppIDString
+    - Value: 字符串类型
+- 渠道标识
+    - Key: BuglyAppChannelString
+    - Value: 字符串类型
+- 版本信息
+    - Key: BuglyAppVersionString
+    - Value: 字符串类型
+- 开启Debug信息显示
+    - Key: BuglyDebugEnable
+    - Value: BOOL类型
+
+
 ### Manual installation
 
 
@@ -19,8 +39,7 @@
 3. In XCode, in the project navigator, select your project. Add `libRNBugly.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
-#### Android
-
+#### Android TODO
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
   - Add `import com.reactlibrary.RNBuglyPackage;` to the imports at the top of the file
   - Add `new RNBuglyPackage()` to the list returned by the `getPackages()` method
@@ -34,15 +53,6 @@
       compile project(':react-native-bugly')
   	```
 
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `RNBugly.sln` in `node_modules/react-native-bugly/windows/RNBugly.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using Bugly.RNBugly;` to the usings at the top of the file
-  - Add `new RNBuglyPackage()` to the `List<IReactPackage>` returned by the `Packages` method
-
-
 ## Usage
 ```javascript
 import RNBugly from 'react-native-bugly';
@@ -50,4 +60,3 @@ import RNBugly from 'react-native-bugly';
 // TODO: What to do with the module?
 RNBugly;
 ```
-  

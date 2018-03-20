@@ -7,5 +7,7 @@
 
 @interface RNBugly : NSObject <RCTBridgeModule>
 
++ (void)startWithAppId;
+
 @end
   
