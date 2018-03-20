@@ -10,10 +10,16 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/canyara/react-native-bugly.git", :tag => "master" }
   s.source_files  = "RNBugly/**/*.{h,m}"
-  s.requires_arc = true
+  #s.requires_arc = true
   s.preserve_paths  = "**/*.js"
-  
+
+  spec.framework    = 'SystemConfiguration'
+  spec.framework    = 'Security'
+  spec.framework    = 'libz.dylib'
+  spec.framework    = 'libc++.dylib'
+
   s.dependency "Bugly"
+
   #s.dependency "React"
   #s.dependency "others"
 
