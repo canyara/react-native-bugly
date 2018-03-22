@@ -34,10 +34,7 @@ Bugly支持读取Info.plist文件读取SDK初始化参数，可配置的参数�
 
 #### iOS
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-bugly` and add `RNBugly.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNBugly.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+暂时只能link到pod工程
 
 #### Android TODO
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
@@ -54,6 +51,17 @@ Bugly支持读取Info.plist文件读取SDK初始化参数，可配置的参数�
   	```
 
 ## Usage
+AppDelegate.m
+
+```objective-c
+#import "RNBugly.h"
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  //Add Bugly
+  [RNBugly startWithAppId];
+}
+```
+
 ```javascript
 import RNBugly from 'react-native-bugly';
 
