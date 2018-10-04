@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		EF3A9876206112E10029D47C /* RNBugly.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3A9875206112E10029D47C /* RNBugly.m */; };
+		EFB67C31216630520069D9B7 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB67C30216630520069D9B7 /* Bugly.framework */; };
+		EFB67C342166306A0069D9B7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB67C332166306A0069D9B7 /* SystemConfiguration.framework */; };
+		EFB67C36216630810069D9B7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB67C35216630810069D9B7 /* Security.framework */; };
+		EFB67C38216630870069D9B7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB67C37216630870069D9B7 /* libz.tbd */; };
+		EFB67C3A216630AE0069D9B7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB67C39216630AE0069D9B7 /* libc++.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +31,11 @@
 		134814201AA4EA6300B7C361 /* libRNBugly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNBugly.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3A9874206112E10029D47C /* RNBugly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNBugly.h; sourceTree = "<group>"; };
 		EF3A9875206112E10029D47C /* RNBugly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNBugly.m; sourceTree = "<group>"; };
+		EFB67C30216630520069D9B7 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
+		EFB67C332166306A0069D9B7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EFB67C35216630810069D9B7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EFB67C37216630870069D9B7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		EFB67C39216630AE0069D9B7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB67C3A216630AE0069D9B7 /* libc++.tbd in Frameworks */,
+				EFB67C38216630870069D9B7 /* libz.tbd in Frameworks */,
+				EFB67C36216630810069D9B7 /* Security.framework in Frameworks */,
+				EFB67C342166306A0069D9B7 /* SystemConfiguration.framework in Frameworks */,
+				EFB67C31216630520069D9B7 /* Bugly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,16 +67,29 @@
 			children = (
 				EF3A9873206112E10029D47C /* RNBugly */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				EFB67C322166306A0069D9B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		EF3A9873206112E10029D47C /* RNBugly */ = {
 			isa = PBXGroup;
 			children = (
+				EFB67C30216630520069D9B7 /* Bugly.framework */,
 				EF3A9874206112E10029D47C /* RNBugly.h */,
 				EF3A9875206112E10029D47C /* RNBugly.m */,
 			);
 			path = RNBugly;
+			sourceTree = "<group>";
+		};
+		EFB67C322166306A0069D9B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFB67C39216630AE0069D9B7 /* libc++.tbd */,
+				EFB67C37216630870069D9B7 /* libz.tbd */,
+				EFB67C35216630810069D9B7 /* Security.framework */,
+				EFB67C332166306A0069D9B7 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +242,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/RNBugly",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -234,6 +263,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/RNBugly",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
