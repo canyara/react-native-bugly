@@ -43,9 +43,13 @@ function findFileByAppName(array, appName) {
 }
 
 function addFrameworkAndSearchPath() {
-  console.log("react-native-bugly postlink addFrameworkAndSearchPath");
   var projectPath = glob.sync("**/project.pbxproj", ignoreNodeModules)[0];
+  console.log(
+    "react-native-bugly postlink addFrameworkAndSearchPath projectPath:" +
+      projectPath
+  );
   var project = xcode.project(projectPath);
+
   var frameworkPath = path.join(
     __dirname,
     "../node_modules/react-native-bugly/ios/RNBugly/Bugly.framework"
@@ -86,8 +90,13 @@ function addSearchPaths(project, frameworkSearchPath) {
     .filter(ref => ref.indexOf("_comment") === -1)
     .forEach(ref => {
       const buildSettings = config[ref].buildSettings;
-      const shouldVisitBuildSettings =
-        buildSettings["PRODUCT_NAME"] === package.name;
+      console.log(
+        "react-native-bugly postlink addSearchPaths buildSettings[PRODUCT_NAME]:" +
+          buildSettings["PRODUCT_NAME"] +
+          ", package.name:" +
+          package.name
+      );
+      const shouldVisitBuildSettings = true; // buildSettings["PRODUCT_NAME"] === package.name;
       if (shouldVisitBuildSettings) {
         if (
           !buildSettings["FRAMEWORK_SEARCH_PATHS"] ||
