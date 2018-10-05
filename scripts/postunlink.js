@@ -6,7 +6,7 @@ var plist = require("plist");
 var xcode = require("xcode");
 var _ = require("lodash");
 var pbxFile = require("xcode/lib/pbxFile");
-var package = require("../../../../package.json");
+var package = require("../../../package.json");
 
 var ignoreNodeModules = { ignore: "node_modules/**" };
 var appDelegatePaths = glob.sync("**/AppDelegate.m", ignoreNodeModules);
