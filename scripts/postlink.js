@@ -69,11 +69,11 @@ function addFrameworkAndSearchPath() {
       project.addToPbxFileReferenceSection(file); // PBXFileReference
       project.addToFrameworksPbxGroup(file); // PBXGroup
       project.addToPbxFrameworksBuildPhase(file); // PBXFrameworksBuildPhase
-      //project.addToFrameworkSearchPaths(file);
-      addSearchPaths(
-        project,
-        '"$(SRCROOT)/../node_modules/react-native-bugly/ios/RNBugly/**"'
-      );
+      project.addToFrameworkSearchPaths(file);
+      //   addSearchPaths(
+      //     project,
+      //     '"$(SRCROOT)/../node_modules/react-native-bugly/ios/RNBugly/**"'
+      //   );
       fs.writeFileSync(projectPath, project.writeSync());
     }
   });
