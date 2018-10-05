@@ -8,6 +8,8 @@ var _ = require("lodash");
 var pbxFile = require("xcode/lib/pbxFile");
 var package = require("../../../package.json");
 
+console.log("react-native-bugly postunlink start";
+
 var ignoreNodeModules = { ignore: "node_modules/**" };
 var appDelegatePaths = glob.sync("**/AppDelegate.m", ignoreNodeModules);
 

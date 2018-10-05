@@ -8,6 +8,8 @@ var _ = require("lodash");
 var pbxFile = require("xcode/lib/pbxFile");
 var package = require("../../../package.json");
 
+console.log("react-native-bugly postlink start";
+
 var ignoreNodeModules = { ignore: "node_modules/**" };
 var appDelegatePaths = glob.sync("**/AppDelegate.m", ignoreNodeModules);
 
@@ -41,6 +43,7 @@ function findFileByAppName(array, appName) {
 }
 
 function addFrameworkAndSearchPath() {
+  console.log("react-native-bugly postlink addFrameworkAndSearchPath";
   var projectPath = glob.sync("**/project.pbxproj", ignoreNodeModules)[0];
   var project = xcode.project(projectPath);
   var frameworkPath = path.join(
