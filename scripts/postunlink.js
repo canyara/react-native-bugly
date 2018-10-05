@@ -63,11 +63,11 @@ function removeFrameworkAndSearchPath() {
       project.removeFromPbxFileReferenceSection(file); // PBXFileReference
       project.removeFromFrameworksPbxGroup(file); // PBXGroup
       project.removeFromPbxFrameworksBuildPhase(file); // PBXFrameworksBuildPhase
-      project.removeFromFrameworkSearchPaths(file);
-      //   removeSearchPaths(
-      //     project,
-      //     '"$(SRCROOT)/../node_modules/react-native-bugly/ios/RNBugly/**"'
-      //   );
+      //   project.removeFromFrameworkSearchPaths(file);
+      removeSearchPaths(
+        project,
+        '"$(SRCROOT)/../node_modules/react-native-bugly/ios/RNBugly/**"'
+      );
       fs.writeFileSync(projectPath, project.writeSync());
     }
   });
