@@ -43,7 +43,7 @@ function removeFrameworkAndSearchPath() {
   var project = xcode.project(projectPath);
   var frameworkPath = path.join(
     __dirname,
-    "../node_modules/react-native-bugly/RNBugly/SDK/Bugly.framework"
+    "../node_modules/react-native-bugly/RNBugly/Bugly.framework"
   );
   var project_dir = path.join(__dirname);
   var project_relative = path.relative(project_dir, frameworkPath);
@@ -64,7 +64,7 @@ function removeFrameworkAndSearchPath() {
       //project.removeFromFrameworkSearchPaths(file);
       removeSearchPaths(
         project,
-        '"$(SRCROOT)/../node_modules/react-native-bugly/RNBugly/SDK/**"'
+        '"$(SRCROOT)/../node_modules/react-native-bugly/RNBugly/**"'
       );
       fs.writeFileSync(projectPath, project.writeSync());
     }

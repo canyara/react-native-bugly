@@ -32,5 +32,9 @@
         "Security"
       ]
     }
+  },
+  "commands": {
+    "postlink": "node node_modules/react-native-bugly/scripts/postlink",
+    "postunlink": "node node_modules/react-native-bugly/scripts/postunlink"
   }
 }
