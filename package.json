@@ -9,10 +9,32 @@
   "keywords": [
     "react-native"
   ],
+  "dependencies": {
+    "glob": "^5.0.15",
+    "inquirer": "1.1.2",
+    "plist": "3.0.1",
+    "lodash": "4.17.2",
+    "xcode": "^1.0.0",
+    "path": "^0.12.7"
+  },
   "author": "canyara",
   "license": "MIT",
   "peerDependencies": {
     "react-native": "^0.57.0",
     "react-native-windows": "0.41.0-rc.1"
+  },
+  "rnpm": {
+    "ios": {
+      "sharedLibraries": [
+        "libz",
+        "libc++",
+        "SystemConfiguration",
+        "Security"
+      ]
+    },
+    "commands": {
+      "postlink": "node node_modules/react-native-bugly/scripts/postlink",
+      "postunlink": "node node_modules/react-native-bugly/scripts/postunlink"
+    }
   }
 }
