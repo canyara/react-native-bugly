@@ -8,7 +8,7 @@ var _ = require("lodash");
 var pbxFile = require("xcode/lib/pbxFile");
 var package = require("../../../package.json");
 
-console.log("react-native-bugly postlink start";
+console.log("react-native-bugly postlink start");
 
 var ignoreNodeModules = { ignore: "node_modules/**" };
 var appDelegatePaths = glob.sync("**/AppDelegate.m", ignoreNodeModules);
@@ -43,12 +43,12 @@ function findFileByAppName(array, appName) {
 }
 
 function addFrameworkAndSearchPath() {
-  console.log("react-native-bugly postlink addFrameworkAndSearchPath";
+  console.log("react-native-bugly postlink addFrameworkAndSearchPath");
   var projectPath = glob.sync("**/project.pbxproj", ignoreNodeModules)[0];
   var project = xcode.project(projectPath);
   var frameworkPath = path.join(
     __dirname,
-    "../node_modules/react-native-bugly/RNBugly/Bugly.framework"
+    "../node_modules/react-native-bugly/ios/RNBugly/Bugly.framework"
   );
   var project_dir = path.join(__dirname);
   var project_relative = path.relative(project_dir, frameworkPath);
@@ -72,7 +72,7 @@ function addFrameworkAndSearchPath() {
       //project.addToFrameworkSearchPaths(file);
       addSearchPaths(
         project,
-        '"$(SRCROOT)/../node_modules/react-native-bugly/RNBugly/**"'
+        '"$(SRCROOT)/../node_modules/react-native-bugly/ios/RNBugly/**"'
       );
       fs.writeFileSync(projectPath, project.writeSync());
     }

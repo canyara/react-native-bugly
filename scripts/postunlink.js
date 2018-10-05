@@ -8,7 +8,7 @@ var _ = require("lodash");
 var pbxFile = require("xcode/lib/pbxFile");
 var package = require("../../../package.json");
 
-console.log("react-native-bugly postunlink start";
+console.log("react-native-bugly postunlink start");
 
 var ignoreNodeModules = { ignore: "node_modules/**" };
 var appDelegatePaths = glob.sync("**/AppDelegate.m", ignoreNodeModules);
@@ -45,7 +45,7 @@ function removeFrameworkAndSearchPath() {
   var project = xcode.project(projectPath);
   var frameworkPath = path.join(
     __dirname,
-    "../node_modules/react-native-bugly/RNBugly/Bugly.framework"
+    "../node_modules/react-native-bugly/ios/RNBugly/Bugly.framework"
   );
   var project_dir = path.join(__dirname);
   var project_relative = path.relative(project_dir, frameworkPath);
@@ -66,7 +66,7 @@ function removeFrameworkAndSearchPath() {
       //project.removeFromFrameworkSearchPaths(file);
       removeSearchPaths(
         project,
-        '"$(SRCROOT)/../node_modules/react-native-bugly/RNBugly/**"'
+        '"$(SRCROOT)/../node_modules/react-native-bugly/ios/RNBugly/**"'
       );
       fs.writeFileSync(projectPath, project.writeSync());
     }
