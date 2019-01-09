@@ -2,7 +2,7 @@
 
 ## Getting started
 
-`$ npm install react-native-bugly --save`
+`$ yarn add git+https://github.com/canyara/react-native-bugly.git`
 
 ### Mostly automatic installation
 
