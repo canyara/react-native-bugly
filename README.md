@@ -34,7 +34,7 @@ Bugly 支持读取 Info.plist 文件读取 SDK 初始化参数，可配置的参
 
 node node_modules/react-native-bugly/scripts/postlink
 
-#### Android TODO
+#### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
 
@@ -53,6 +53,8 @@ node node_modules/react-native-bugly/scripts/postlink
 
 ## Usage
 
+#### Android
+
 AppDelegate.m
 
 ```objective-c
@@ -64,9 +66,24 @@ AppDelegate.m
 }
 ```
 
+src/main/java/your_project/MainApplication
+
+```java
+import com.tencent.bugly.crashreport.CrashReport;
+
+@Override
+public void onCreate() {
+  super.onCreate();
+  //bugly
+  CrashReport.initCrashReport(getApplicationContext());
+
+  ...
+}
+```
+
 ```javascript
 import RNBugly from "react-native-bugly";
 
-// TODO: What to do with the module?
-RNBugly;
+RNBugly.updateAppVersion(version);
+RNBugly.setUserIdentifier(userId);
 ```
