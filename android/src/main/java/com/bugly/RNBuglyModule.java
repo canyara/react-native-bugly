@@ -21,10 +21,16 @@ public class RNBuglyModule extends ReactContextBaseJavaModule {
     return "RNBugly";
   }
 
+  /**
+   * 检查是否需要更新
+   *
+   * @param isManual  用户手动点击检查，非用户点击操作请传false
+   * @param isSilence 是否显示弹窗等交互，[true:没有弹窗和toast] [false:有弹窗或toast]
+   */
   @ReactMethod
-  public void checkUpgrade() {
-    Log.i("ReactNative-bugly", "checkUpgrade()");
-    Beta.checkUpgrade();
+  public void checkUpgrade(boolean isManual, boolean isSilence) {
+    Log.i("ReactNative-bugly", "checkUpgrade(): isManual = " + isManual + " isSilence = " + isSilence);
+    Beta.checkUpgrade(isManual, isSilence);
   }
 
   // 主动上报开发者 catch 的异常
@@ -34,7 +40,12 @@ public class RNBuglyModule extends ReactContextBaseJavaModule {
     CrashReport.postCatchedException(new MyBuglyException(str));
   }
 
+  /**
+   * 初始化
+   */
   public static void init(Context context, String appId, boolean isDebug) {
+    // true 表示初始化时自动检查升级，false 表示不会自动检查升级，需要手动调用 Beta.checkUpgrade() 方法
+    Beta.autoCheckUpgrade = false;
     Bugly.init(context, appId, isDebug);
   }
 
