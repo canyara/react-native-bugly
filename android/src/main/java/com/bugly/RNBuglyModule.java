@@ -26,6 +26,10 @@ public class RNBuglyModule extends ReactContextBaseJavaModule {
    *
    * @param isManual  用户手动点击检查，非用户点击操作请传false
    * @param isSilence 是否显示弹窗等交互，[true:没有弹窗和toast] [false:有弹窗或toast]
+   * 
+   * 示例：
+   *    1. APP启动时，自动检查更新：checkUpgrade(false, false);
+   *    2. 设置页面-检查新版本：checkUpgrade(true, false);
    */
   @ReactMethod
   public void checkUpgrade(boolean isManual, boolean isSilence) {
